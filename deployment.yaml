@@ -34,14 +34,14 @@ spec:
         app: service
     spec:
       containers:
-        - image: hashicorp/http-echo:0.2.3
+        - image: valerybaturin/otus:1.0
           name: go-service
           ports:
             - containerPort: 8000
           imagePullPolicy: IfNotPresent
-         readinessProbe:
-           httpGet:
-             path: /health
-             port: 8000
-           initialDelaySeconds: 5
-           periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 20
